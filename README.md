@@ -11,3 +11,10 @@
 - Cade Powell: myhistory and alias
 - Jaylin Nwigwe: exit and the pipelining
 - Quan Nguyen: cd and I/O redirection
+
+## Run Instruction:
+1. Clone the repository
+2. Compile with make on ssh
+4. Run the shell
+
+## Known Issues:
