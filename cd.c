@@ -11,23 +11,19 @@ void builtin_cd(const char *path) {
         return;
     }
 
+    // attempt to update dir
     if (chdir(path) != 0) {
         perror("cd failed");
+        return;
     }
-}
 
-// attempt to change directory
-if(chdir(path) != 0) {
-    perror("cd");
-    return;
-}
-
-// Update the current working directory in the environment
-char cwd[1024];
-if (getcwd(cwd, sizeof(cwd)) != NULL) {
-    if(setenv("PWD", cwd, 1) !+0) {
-        perror("cd: setenv failed");
+    // Update the current working directory in the environment
+    char cwd[1024];
+    if (getcwd(cwd, sizeof(cwd)) != NULL) {
+        if (setenv("PWD", cwd, 1) != 0) {
+            perror("cd: setenv failed");
+        }
+    } else {
+        perror("getcwd failed");
     }
-} else {
-    perror("getcwd failed");
 }
