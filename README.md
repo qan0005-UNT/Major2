@@ -18,3 +18,7 @@
 4. Run the shell
 
 ## Known Issues:
+- cd doesn't change properly
+- myhistory -c doesn't work
+- syntax issues
+- alias won't shortcut properly
