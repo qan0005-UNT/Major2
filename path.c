@@ -72,3 +72,7 @@ void free_path_list() {
     }
     path_count = 0;
 }
+
+void init_path() {
+    path_count = 0;
+}
